@@ -11,6 +11,7 @@
     "db:reset": "knex migrate:rollback --all && knex migrate:latest && knex seed:run",
     "deploy:infra": "./deploy.sh",
     "deploy:app": "./deploy-app.sh",
+    "test:newrelic": "node test-newrelic-logs.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

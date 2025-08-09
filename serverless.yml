@@ -139,11 +139,7 @@ resources:
       Properties:
         GroupDescription: Security group for RDS instance
         VpcId: !Ref VPC
-        SecurityGroupIngress:
-          - IpProtocol: tcp
-            FromPort: 3306
-            ToPort: 3306
-            SourceSecurityGroupId: !Ref EC2SecurityGroup
+        SecurityGroupIngress: []
         Tags:
           - Key: Name
             Value: ${self:service}-${self:provider.stage}-rds-sg
@@ -213,7 +209,7 @@ resources:
     EC2Instance:
       Type: AWS::EC2::Instance
       Properties:
-        ImageId: ami-0abcdef1234567890  # Amazon Linux 2
+        ImageId: ami-0c02fb55956c7d316  # Amazon Linux 2
         InstanceType: t3.micro
         KeyName: !Ref EC2KeyPair
         SecurityGroupIds:
